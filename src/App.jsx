@@ -6,14 +6,14 @@ import { Brain, GitBranch, TrendingUp, BarChart, CheckCircle, GitFork, Group, Aw
 import modulesData from "./modules.json";
 
 const iconComponents = {
-  Brain: <Brain className="w-12 h-12 text-blue-500" />,
-  GitBranch: <GitBranch className="w-12 h-12 text-green-500" />,
-  TrendingUp: <TrendingUp className="w-12 h-12 text-purple-500" />,
-  BarChart: <BarChart className="w-12 h-12 text-orange-500" />,
-  CheckCircle: <CheckCircle className="w-12 h-12 text-red-500" />,
-  GitFork: <GitFork className="w-12 h-12 text-indigo-500" />,
-  Group: <Group className="w-12 h-12 text-pink-500" />,
-  Award: <Award className="w-12 h-12 text-yellow-500" />,
+  Brain: <Brain className="w-8 h-8 sm:w-12 sm:h-12 text-blue-500" />,
+  GitBranch: <GitBranch className="w-8 h-8 sm:w-12 sm:h-12 text-green-500" />,
+  TrendingUp: <TrendingUp className="w-8 h-8 sm:w-12 sm:h-12 text-purple-500" />,
+  BarChart: <BarChart className="w-8 h-8 sm:w-12 sm:h-12 text-orange-500" />,
+  CheckCircle: <CheckCircle className="w-8 h-8 sm:w-12 sm:h-12 text-red-500" />,
+  GitFork: <GitFork className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-500" />,
+  Group: <Group className="w-8 h-8 sm:w-12 sm:h-12 text-pink-500" />,
+  Award: <Award className="w-8 h-8 sm:w-12 sm:h-12 text-yellow-500" />,
 };
 
 const App = () => {
@@ -39,18 +39,18 @@ const App = () => {
   const progress = ((currentModule + 1) / modules.length) * 100;
 
   return (
-    <div className="p-6 max-w-2xl mx-auto bg-background min-h-screen">
-      <h1 className="text-4xl font-bold mb-6 text-center text-primary">Machine Learning for Beginners</h1>
+    <div className="p-4 sm:p-6 max-w-full sm:max-w-2xl mx-auto bg-background min-h-screen">
+      <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-primary">Machine Learning for Beginners</h1>
 
-      <Card className="mb-6">
-        <CardHeader className="text-2xl font-semibold">Welcome!</CardHeader>
+      <Card className="mb-4 sm:mb-6">
+        <CardHeader className="text-xl sm:text-2xl font-semibold">Welcome!</CardHeader>
         <CardContent>
           <p className="text-muted-foreground">Ready to start your exciting journey into Machine Learning? Don't worry, we'll take it step by step!</p>
         </CardContent>
       </Card>
 
-      <Card className="mb-6">
-        <CardHeader className="text-xl font-semibold flex items-center space-x-2">
+      <Card className="mb-4 sm:mb-6">
+        <CardHeader className="text-lg sm:text-xl font-semibold flex items-center space-x-2">
           {modules[currentModule].icon}
           <span>{modules[currentModule].title}</span>
         </CardHeader>
@@ -59,7 +59,7 @@ const App = () => {
         </CardContent>
       </Card>
 
-      <div className="flex justify-between mb-6">
+      <div className="flex justify-between mb-4 sm:mb-6">
         <Button onClick={prevModule} disabled={currentModule === 0}>
           Previous
         </Button>
