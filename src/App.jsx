@@ -42,36 +42,36 @@ const App = () => {
     <div className="p-4 sm:p-6 max-w-full sm:max-w-2xl mx-auto bg-background min-h-screen">
       <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-primary">Machine Learning for Beginners</h1>
 
-      <Card className="mb-4 sm:mb-6">
-        <CardHeader className="text-xl sm:text-2xl font-semibold">Welcome!</CardHeader>
-        <CardContent>
+      <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
+        <CardHeader className="text-xl sm:text-2xl font-semibold text-gray-800">Welcome!</CardHeader>
+        <CardContent className="text-gray-700">
           <p className="text-muted-foreground">Ready to start your exciting journey into Machine Learning? Don't worry, we'll take it step by step!</p>
         </CardContent>
       </Card>
 
-      <Card className="mb-4 sm:mb-6">
-        <CardHeader className="text-lg sm:text-xl font-semibold flex items-center space-x-2">
+      <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
+        <CardHeader className="text-lg sm:text-xl font-semibold flex items-center space-x-2 text-gray-800">
           {modules[currentModule].icon}
           <span>{modules[currentModule].title}</span>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-gray-700">
           <p className="text-muted-foreground">{modules[currentModule].content}</p>
         </CardContent>
       </Card>
 
       <div className="flex justify-between mb-4 sm:mb-6">
-        <Button onClick={prevModule} disabled={currentModule === 0}>
+        <Button onClick={prevModule} disabled={currentModule === 0} className="bg-primary hover:bg-primary-dark text-white rounded-lg py-2 px-4 transition-all duration-200">
           Previous
         </Button>
-        <Button onClick={nextModule} disabled={currentModule === modules.length - 1}>
+        <Button onClick={nextModule} disabled={currentModule === modules.length - 1} className="bg-primary hover:bg-primary-dark text-white rounded-lg py-2 px-4 transition-all duration-200">
           Next
         </Button>
       </div>
 
-      <Card>
-        <CardHeader className="text-lg font-semibold">Your Progress</CardHeader>
-        <CardContent>
-          <Progress value={progress} className="mb-2" />
+      <Card className="shadow-lg rounded-lg">
+        <CardHeader className="text-lg font-semibold text-gray-800">Your Progress</CardHeader>
+        <CardContent className="text-gray-700">
+          <Progress value={progress} className="mb-2 bg-gray-200" />
           <p className="text-muted-foreground">
             You've completed {currentModule + 1} out of {modules.length} lessons. Keep going!
           </p>
