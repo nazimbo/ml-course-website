@@ -2,28 +2,27 @@ import React, { useState } from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Brain, GitBranch, TrendingUp } from "lucide-react";
+import { Brain, GitBranch, TrendingUp, BarChart, CheckCircle, GitFork, Group, Award } from "lucide-react";
+import modulesData from "./modules.json";
 
-const BeginnerMachineLearningCourse = () => {
+const iconComponents = {
+  Brain: <Brain className="w-12 h-12 text-blue-500" />,
+  GitBranch: <GitBranch className="w-12 h-12 text-green-500" />,
+  TrendingUp: <TrendingUp className="w-12 h-12 text-purple-500" />,
+  BarChart: <BarChart className="w-12 h-12 text-orange-500" />,
+  CheckCircle: <CheckCircle className="w-12 h-12 text-red-500" />,
+  GitFork: <GitFork className="w-12 h-12 text-indigo-500" />,
+  Group: <Group className="w-12 h-12 text-pink-500" />,
+  Award: <Award className="w-12 h-12 text-yellow-500" />,
+};
+
+const App = () => {
   const [currentModule, setCurrentModule] = useState(0);
 
-  const modules = [
-    {
-      title: "What is Machine Learning?",
-      content: "Machine Learning is teaching computers to learn from data, just like how you learn from experience!",
-      icon: <Brain className="w-12 h-12 text-blue-500" />,
-    },
-    {
-      title: "Your First ML Concept: Classification",
-      content: "Classification is like sorting your toys into different boxes based on their features.",
-      icon: <GitBranch className="w-12 h-12 text-green-500" />,
-    },
-    {
-      title: "Fun with Numbers: Prediction",
-      content: "Prediction is guessing a number based on other numbers, like guessing how many candies are in a jar.",
-      icon: <TrendingUp className="w-12 h-12 text-purple-500" />,
-    },
-  ];
+  const modules = modulesData.map((module) => ({
+    ...module,
+    icon: iconComponents[module.icon],
+  }));
 
   const nextModule = () => {
     if (currentModule < modules.length - 1) {
@@ -82,4 +81,4 @@ const BeginnerMachineLearningCourse = () => {
   );
 };
 
-export default BeginnerMachineLearningCourse;
+export default App;
