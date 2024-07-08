@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -54,14 +55,18 @@ const App = () => {
   // Calculate the progress percentage based on the current module index
   const progress = ((currentModule + 1) / modules.length) * 100;
 
+  // Framer Motion variants for fade animation
+  const fadeVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
     <div className="p-4 sm:p-6 max-w-full sm:max-w-2xl mx-auto bg-background min-h-screen">
       <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-primary">{t("title")}</h1>
 
-      {/* Language Selector */}
       <LanguageSelector />
 
-      {/* Initial welcome card */}
       <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
         <CardHeader className="text-xl sm:text-2xl font-semibold text-gray-800">{t("welcome")}</CardHeader>
         <CardContent className="text-gray-700">
@@ -69,18 +74,20 @@ const App = () => {
         </CardContent>
       </Card>
 
-      {/* Current module card */}
-      <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
-        <CardHeader className="text-lg sm:text-xl font-semibold flex items-center space-x-2 text-gray-800">
-          {modules[currentModule].icon}
-          <span>{modules[currentModule].title}</span>
-        </CardHeader>
-        <CardContent className="text-gray-700">
-          <p className="text-muted-foreground">{modules[currentModule].content}</p>
-        </CardContent>
-      </Card>
+      <AnimatePresence mode="wait">
+        <motion.div key={currentModule} variants={fadeVariants} initial="hidden" animate="visible" exit="hidden" transition={{ duration: 0.3 }}>
+          <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
+            <CardHeader className="text-lg sm:text-xl font-semibold flex items-center space-x-2 text-gray-800">
+              {modules[currentModule].icon}
+              <span>{modules[currentModule].title}</span>
+            </CardHeader>
+            <CardContent className="text-gray-700">
+              <p className="text-muted-foreground">{modules[currentModule].content}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Navigation buttons */}
       <div className="flex justify-between mb-4 sm:mb-6">
         <Button onClick={prevModule} disabled={currentModule === 0} className="bg-primary hover:bg-primary-dark text-white rounded-lg py-2 px-4 transition-all duration-200 disabled:opacity-50">
           Previous
@@ -90,7 +97,6 @@ const App = () => {
         </Button>
       </div>
 
-      {/* Progress card */}
       <Card className="shadow-lg rounded-lg">
         <CardHeader className="text-lg font-semibold text-gray-800">{t("yourProgress")}</CardHeader>
         <CardContent className="text-gray-700">
