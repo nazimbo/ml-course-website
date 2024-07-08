@@ -1,0 +1,41 @@
+{
+  "title": "Apprentissage Automatique pour Débutants",
+  "welcome": "Bienvenue!",
+  "welcomeContent": "Prêt à commencer votre voyage passionnant dans l'apprentissage automatique ? Ne vous inquiétez pas, nous allons y aller étape par étape!",
+  "yourProgress": "Votre Progression",
+  "completed": "Vous avez terminé {{currentModule}} sur {{totalModules}} leçons. Continuez comme ça!",
+  "modules": [
+    {
+      "title": "Qu'est-ce que l'apprentissage automatique?",
+      "content": "L'apprentissage automatique, c'est apprendre aux ordinateurs à apprendre à partir des données, tout comme vous apprenez de l'expérience!"
+    },
+    {
+      "title": "Votre Premier Concept en ML: Classification",
+      "content": "La classification, c'est comme trier vos jouets dans différentes boîtes en fonction de leurs caractéristiques."
+    },
+    {
+      "title": "S'amuser avec les Nombres: Prédiction",
+      "content": "La prédiction, c'est deviner un nombre en fonction d'autres nombres, comme deviner combien de bonbons se trouvent dans un bocal."
+    },
+    {
+      "title": "Exploration des Données: Visualisation",
+      "content": "La visualisation des données, c'est comme dessiner des images pour mieux comprendre vos données. Cela nous aide à voir des motifs!"
+    },
+    {
+      "title": "Apprendre de ses Erreurs: Évaluation des Modèles",
+      "content": "Évaluer votre modèle, c'est comme vérifier vos devoirs. Cela nous aide à savoir à quel point notre machine apprend bien!"
+    },
+    {
+      "title": "Prendre des Décisions: Arbres de Décision",
+      "content": "Un arbre de décision, c'est comme un jeu de 20 questions, où chaque réponse mène à une nouvelle question ou à une décision finale."
+    },
+    {
+      "title": "Trouver des Modèles: Regroupement",
+      "content": "Le regroupement, c'est rassembler des choses similaires, comme organiser votre placard par types de vêtements."
+    },
+    {
+      "title": "Apprendre de l'Expérience: Apprentissage par Renforcement",
+      "content": "L'apprentissage par renforcement, c'est comme entraîner un animal de compagnie. L'ordinateur apprend en obtenant des récompenses pour ses bonnes actions!"
+    }
+  ]
+}

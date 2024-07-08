@@ -1,0 +1,41 @@
+{
+  "title": "Machine Learning for Beginners",
+  "welcome": "Welcome!",
+  "welcomeContent": "Ready to start your exciting journey into Machine Learning? Don't worry, we'll take it step by step!",
+  "yourProgress": "Your Progress",
+  "completed": "You've completed {{currentModule}} out of {{totalModules}} lessons. Keep going!",
+  "modules": [
+    {
+      "title": "What is Machine Learning?",
+      "content": "Machine Learning is teaching computers to learn from data, just like how you learn from experience!"
+    },
+    {
+      "title": "Your First ML Concept: Classification",
+      "content": "Classification is like sorting your toys into different boxes based on their features."
+    },
+    {
+      "title": "Fun with Numbers: Prediction",
+      "content": "Prediction is guessing a number based on other numbers, like guessing how many candies are in a jar."
+    },
+    {
+      "title": "Exploring Data: Visualization",
+      "content": "Data visualization is like drawing pictures to understand your data better. It helps us see patterns!"
+    },
+    {
+      "title": "Learning from Mistakes: Model Evaluation",
+      "content": "Evaluating your model is like checking your homework. It helps us know how well our machine is learning!"
+    },
+    {
+      "title": "Making Decisions: Decision Trees",
+      "content": "A decision tree is like a game of 20 questions, where each answer leads to a new question or a final decision."
+    },
+    {
+      "title": "Finding Patterns: Clustering",
+      "content": "Clustering is grouping similar things together, like organizing your closet by types of clothes."
+    },
+    {
+      "title": "Learning from Experience: Reinforcement Learning",
+      "content": "Reinforcement learning is like training a pet. The computer learns by getting rewards for good actions!"
+    }
+  ]
+}

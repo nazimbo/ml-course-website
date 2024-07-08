@@ -1,11 +1,16 @@
 import React, { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Brain, GitBranch, TrendingUp, BarChart, CheckCircle, GitFork, Group, Award } from "lucide-react";
 import modulesData from "./modules.json";
+import LanguageSelector from "./LanguageSelector";
 
 const App = () => {
+  // Translation hook
+  const { t } = useTranslation();
+
   // State hook to keep track of the current module index
   const [currentModule, setCurrentModule] = useState(0);
 
@@ -25,8 +30,10 @@ const App = () => {
   );
 
   // Mapping module data to include corresponding icons
-  const modules = modulesData.map((module) => ({
+  const modules = modulesData.map((module, index) => ({
     ...module,
+    title: t(`modules.${index}.title`),
+    content: t(`modules.${index}.content`),
     icon: iconComponents[module.icon],
   }));
 
@@ -49,13 +56,16 @@ const App = () => {
 
   return (
     <div className="p-4 sm:p-6 max-w-full sm:max-w-2xl mx-auto bg-background min-h-screen">
-      <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-primary">Machine Learning for Beginners</h1>
+      <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-primary">{t("title")}</h1>
+
+      {/* Language Selector */}
+      <LanguageSelector />
 
       {/* Initial welcome card */}
       <Card className="mb-4 sm:mb-6 shadow-lg rounded-lg">
-        <CardHeader className="text-xl sm:text-2xl font-semibold text-gray-800">Welcome!</CardHeader>
+        <CardHeader className="text-xl sm:text-2xl font-semibold text-gray-800">{t("welcome")}</CardHeader>
         <CardContent className="text-gray-700">
-          <p className="text-muted-foreground">Ready to start your exciting journey into Machine Learning? Don't worry, we'll take it step by step!</p>
+          <p className="text-muted-foreground">{t("welcomeContent")}</p>
         </CardContent>
       </Card>
 
@@ -82,12 +92,10 @@ const App = () => {
 
       {/* Progress card */}
       <Card className="shadow-lg rounded-lg">
-        <CardHeader className="text-lg font-semibold text-gray-800">Your Progress</CardHeader>
+        <CardHeader className="text-lg font-semibold text-gray-800">{t("yourProgress")}</CardHeader>
         <CardContent className="text-gray-700">
           <Progress value={progress} className="mb-2 bg-gray-200" />
-          <p className="text-muted-foreground">
-            You've completed {currentModule + 1} out of {modules.length} lessons. Keep going!
-          </p>
+          <p className="text-muted-foreground">{t("completed", { currentModule: currentModule + 1, totalModules: modules.length })}</p>
         </CardContent>
       </Card>
     </div>
