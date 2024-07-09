@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Brain, GitBranch, TrendingUp, BarChart, CheckCircle, GitFork, Group, Award } from "lucide-react";
+import { Brain, GitBranch, TrendingUp, BarChart, CheckCircle, GitFork, Group, Award, Network, MessageSquare, Eye, Paintbrush, Shield, Globe, Rocket } from "lucide-react";
 import modulesData from "./modules.json";
 import LanguageSelector from "./LanguageSelector";
 
@@ -26,6 +26,13 @@ const App = () => {
       GitFork: <GitFork className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-500" />,
       Group: <Group className="w-8 h-8 sm:w-12 sm:h-12 text-pink-500" />,
       Award: <Award className="w-8 h-8 sm:w-12 sm:h-12 text-yellow-500" />,
+      Network: <Network className="w-8 h-8 sm:w-12 sm:h-12 text-cyan-500" />,
+      MessageSquare: <MessageSquare className="w-8 h-8 sm:w-12 sm:h-12 text-teal-500" />,
+      Eye: <Eye className="w-8 h-8 sm:w-12 sm:h-12 text-lime-500" />,
+      Paintbrush: <Paintbrush className="w-8 h-8 sm:w-12 sm:h-12 text-amber-500" />,
+      Shield: <Shield className="w-8 h-8 sm:w-12 sm:h-12 text-rose-500" />,
+      Globe: <Globe className="w-8 h-8 sm:w-12 sm:h-12 text-fuchsia-500" />,
+      Rocket: <Rocket className="w-8 h-8 sm:w-12 sm:h-12 text-sky-500" />,
     }),
     []
   );

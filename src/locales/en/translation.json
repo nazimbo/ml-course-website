@@ -36,6 +36,34 @@
     {
       "title": "Learning from Experience: Reinforcement Learning",
       "content": "Reinforcement learning is like training a pet. The computer learns by getting rewards for good actions!"
+    },
+    {
+      "title": "Thinking Like a Brain: Neural Networks",
+      "content": "Neural networks are like a big team of helpers in your brain, working together to solve complex problems!"
+    },
+    {
+      "title": "Words and Language: Natural Language Processing",
+      "content": "Natural Language Processing helps computers understand and respond in human languages, like when you talk to a smart speaker!"
+    },
+    {
+      "title": "Seeing the World: Computer Vision",
+      "content": "Computer Vision teaches machines to 'see' and understand images, just like how you recognize objects and faces!"
+    },
+    {
+      "title": "Creativity and AI: Generative Models",
+      "content": "Generative models are like having an AI artist that can create new images, music, or text based on what it has learned!"
+    },
+    {
+      "title": "Ethical AI: Fairness and Bias",
+      "content": "It's important to make sure AI treats everyone fairly and doesn't make unfair decisions based on things like gender or race."
+    },
+    {
+      "title": "AI in the Real World: Applications",
+      "content": "AI is used in many areas of our lives, from recommending movies to helping doctors diagnose diseases!"
+    },
+    {
+      "title": "The Future of AI: What's Next?",
+      "content": "AI is always improving! We'll explore exciting new developments and imagine what AI might be able to do in the future."
     }
   ]
 }
